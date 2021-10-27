@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Путевки в Турцию по лучшим ценам!</title>
+{% endblock %}
+
+
+{% block content %}
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+  <h1 class="display-4 fw-normal">Путевки в Турцию по лучшим ценам!</h1>
+  <p class="fs-5">Хотите сделать себе незабываемый отпуск? Тогда вы попали по адресу! У нас вы можете выбрать тур, который вам понравится по желаемой комплектации. Платите только за то, что вам нужно.</p><br>
+  <p class="fs-5 ">С уважением, компания MBarovTour!</p>
+</div> 
+
+<div class='container'>
+    <div class='row row-cols-1 row-cols-md-3 mb-3 text-center'>
+      {% for el in data %}
+      <div class="  ">
+      <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3">
+          <h4 class="my-0 fw-normal">{{ el.title }}</h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">{{ el.price }}<small class="text-muted fw-light">  рублей</small></h1>
+          <p class='fs-4'> {{ el.text }} </p>
+          <p class='fs-6'> Вас приятно порадует: </p>
+          <ul class='fs-6' type="disc">
+            <li>Страховка входит в стоимость тура</li>
+            <li>Гарантия возврата средств</li>
+            <li>Бесплатный подбор тура</li>
+          </ul>
+          <a href='/buy/{{el.id}}' class="w-100 btn btn-lg btn-outline-primary">Купить</a>
+        </div>
+      </div>
+    </div>
+      {% endfor %}
+    </div>
+</div>
+{% endblock %}

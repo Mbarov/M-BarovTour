@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Добавление товара</title>
+{% endblock %}
+
+
+{% block content %}
+<div class='container'>
+    <h1>Добавление товара</h1>
+    <form method='post'>
+        <input type='text' class='form-control' name='title' id='title' placeholder="Название тура"><br>
+        <input type='number' class='form-control' name='price' id='price' placeholder="Стоимость тура"><br>
+        <input type='text' class='form-control' name='text' id='text' placeholder="Описание тура"><br>
+        <button class='btn btn-success' type='submit'>Создать товар</button> <!--submit - при нажатии будет перезагрузка страницы и отправка данных-->
+
+    </form>    
+</div>
+{% endblock %}
